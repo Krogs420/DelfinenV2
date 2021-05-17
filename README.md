@@ -1,2 +1,2 @@
-# DelfinenV2
-Delfinen but better this time
+# Delfinen
+3 Ugers Delfin projekt ("Svømmehalsplatform")
