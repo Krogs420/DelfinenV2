@@ -22,7 +22,7 @@ public class SystemInterface {
                     //coachRun();
                     break;
                 case 3:
-                    cashier.showMemberFeeTotal();
+                    administrator.totalMembershipIncome();
                     break;
                 case 4:
                     System.out.println("Bye");

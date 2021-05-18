@@ -6,14 +6,17 @@ public class Member {
     private int age;
     private String mail;
     private boolean activeMember;
+    private int memberFee;
 
-    public Member(int iD, String name, int age, String mail, boolean activeMember, boolean motionComp) {
+
+    public Member(int iD, String name, int age, String mail, boolean activeMember, boolean motionComp, int memberFee) {
         this.iD = iD;
         this.name = name;
         this.age = age;
         this.mail = mail;
         this.activeMember = activeMember;
         this.motionComp = motionComp;
+        this.memberFee = memberFee;
     }
 
     @Override
@@ -26,6 +29,7 @@ public class Member {
                 "\nMail: " + mail +
                 "\nActive Member: " + activeMember +
                 "\nMotionComp: " + motionComp +
+                "\nYearly Fee: " + memberFee +
                 "\n----------------------------------------";
     }
 
@@ -77,6 +81,14 @@ public class Member {
 
     public void setiD(int iD) {
         this.iD = iD;
+    }
+
+    public int getMemberFee() {
+        return memberFee;
+    }
+
+    public void setMemberFee(int memberFee) {
+        this.memberFee = memberFee;
     }
 }
 

@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Administrator {
 
+    private int memberFee;
+    private int totalIncome = 0;
+
     Scanner input = new Scanner(System.in);
     private ArrayList<Member> memberlist = new ArrayList<Member>();
     //Member member = new Member(0, "", 99, "", true, true, true);
@@ -31,7 +34,7 @@ public class Administrator {
         }
     }
 
-    public void makeNewMember() {
+    public int makeNewMember() {
 
         System.out.println("Create an id");
         int iD = input.nextInt();
@@ -47,12 +50,30 @@ public class Administrator {
         boolean active = input.nextBoolean();
         System.out.println("Is member a competitor?");
         boolean comp = input.nextBoolean();
-        Member member = new Member(iD, name, age, mail, active, comp);
+
+        if (active == true) {
+            if (age < 18) {
+                memberFee = 1000;
+
+            } else if (age >= 18 && age <= 60) {
+                memberFee = 1600;
+
+            } else {
+                memberFee = 1150;
+            }
+        } else {
+            memberFee = 500;
+        }
+
+        totalIncome += memberFee;
+
+        Member member = new Member(iD, name, age, mail, active, comp, memberFee);
         memberlist.add(member);
         for (int i = 0; i < memberlist.size(); i++) {
             System.out.println(memberlist.get(i));
             writeToFile.println(memberlist.get(i));
         }
+        return memberFee;
     }
 
     public void removeMember() {
@@ -101,5 +122,9 @@ public class Administrator {
                     System.out.println("Your input is not valid, try again.");
             }
         } while (!valid);
+    }
+
+    public void totalMembershipIncome() {
+        System.out.println("The yearly total income is: " + totalIncome);
     }
 }
