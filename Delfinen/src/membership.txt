@@ -1,0 +1,36 @@
+----------------------------------------
+Member: 
+ID: 1
+Name: sbg
+Age: 34
+Mail: fsgn
+Active Member: true
+MotionComp: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: sbg
+Age: 34
+Mail: fsgn
+Active Member: true
+MotionComp: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 23
+Name: fgjdsh
+Age: 26
+Mail: skjlfd
+Active Member: true
+MotionComp: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: thegtjd
+Age: 12
+Mail: dgsf
+Active Member: true
+MotionComp: true
+----------------------------------------

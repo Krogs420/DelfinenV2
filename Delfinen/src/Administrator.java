@@ -1,18 +1,34 @@
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Administrator {
+
     Scanner input = new Scanner(System.in);
     private ArrayList<Member> memberlist = new ArrayList<Member>();
-    Member member = new Member(0, "", 99, "", true, true, true);
+    //Member member = new Member(0, "", 99, "", true, true, true);
+
+    public Administrator() throws FileNotFoundException {
+    }
 
     public void setMemberlist(ArrayList memberlist) {
         this.memberlist = memberlist;
     }
 
-    public ArrayList getMemberlist() {
+    public ArrayList<Member> getMemberlist() {
         return memberlist;
+    }
+
+    File file = new File("src/membership.txt");
+
+    PrintStream writeToFile = new PrintStream(new FileOutputStream(file, true));
+
+    public void viewMemberList() {
+        System.out.println("\nMemberlist: ");
+        for (int i = 0; i < memberlist.size(); i++) {
+            System.out.println(memberlist.get(i));
+        }
     }
 
     public void makeNewMember() {
@@ -29,15 +45,13 @@ public class Administrator {
         String mail = input.nextLine();
         System.out.println("Is the member active?");
         boolean active = input.nextBoolean();
-        System.out.println("Is the member junior or senior?");
-        boolean senior = input.nextBoolean();
         System.out.println("Is member a competitor?");
         boolean comp = input.nextBoolean();
-        Member member = new Member(iD, name, age, mail, active,
-                senior, comp);
+        Member member = new Member(iD, name, age, mail, active, comp);
         memberlist.add(member);
         for (int i = 0; i < memberlist.size(); i++) {
             System.out.println(memberlist.get(i));
+            writeToFile.println(memberlist.get(i));
         }
     }
 
@@ -49,7 +63,7 @@ public class Administrator {
         boolean memberExist = false;
 
         for (int i = 0; i < memberlist.size(); i++) {
-            memberlist.get(i);
+            Member member = memberlist.get(i);
             if (member.getiD() == remove) {
                 memberlist.remove(i);
                 memberExist = true;
@@ -63,7 +77,7 @@ public class Administrator {
 
     public void adminMenu() {
         UserInterface userInterface = new UserInterface("Do you want to:", "1. Add a member \n" +
-                "2. Remove a member", new String[]{});
+                "2. Remove a member" + "\n3. View Memberlist", new String[]{});
 
         int choice;
         boolean valid;
@@ -78,6 +92,9 @@ public class Administrator {
                     break;
                 case 2:
                     removeMember();
+                    break;
+                case 3:
+                    viewMemberList();
                     break;
                 default:
                     valid = false;

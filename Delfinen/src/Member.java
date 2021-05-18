@@ -6,28 +6,27 @@ public class Member {
     private int age;
     private String mail;
     private boolean activeMember;
-    private boolean juniorSenior;
 
-    public Member(int iD, String name, int age, String mail, boolean activeMember, boolean juniorSenior, boolean motionComp) {
+    public Member(int iD, String name, int age, String mail, boolean activeMember, boolean motionComp) {
         this.iD = iD;
         this.name = name;
         this.age = age;
         this.mail = mail;
         this.activeMember = activeMember;
-        this.juniorSenior = juniorSenior;
         this.motionComp = motionComp;
     }
 
     @Override
     public String toString() {
-        return "Member: " +
-                "ID: " + iD + '\'' +
-                "name = " + name + '\'' +
-                ", age = " + age +
-                ", mail = '" + mail + '\'' +
-                ", activeMember = " + activeMember +
-                ", juniorSenior = " + juniorSenior +
-                ", motionComp = " + motionComp;
+        return  "----------------------------------------" +
+                "\nMember: " +
+                "\nID: " + iD +
+                "\nName: " + name +
+                "\nAge: " + age +
+                "\nMail: " + mail +
+                "\nActive Member: " + activeMember +
+                "\nMotionComp: " + motionComp +
+                "\n----------------------------------------";
     }
 
     public String getName() {
@@ -60,14 +59,6 @@ public class Member {
 
     public void setActiveMember(boolean activeMember) {
         this.activeMember = activeMember;
-    }
-
-    public boolean isJuniorSenior() {
-        return juniorSenior;
-    }
-
-    public void setJuniorSenior(boolean juniorSenior) {
-        this.juniorSenior = juniorSenior;
     }
 
     public boolean isMotionComp() {

@@ -1,39 +1,44 @@
+import java.io.FileNotFoundException;
+
 public class Cashier {
 
     private int memberFee;
-    private int memberFeeTotal;
 
     Administrator administrator = new Administrator();
 
-    public void memberFeeCalculator(){
-
-        if (administrator.member.isActiveMember() == false) {
-
-            for (int i = 0; i < administrator.getMemberlist().size(); i++) {
-                if (administrator.member.getAge() < 18) {
-                    memberFee = 1000;
-                    memberFee += memberFeeTotal;
-
-                } else if (administrator.member.getAge() >= 18 && administrator.member.getAge() <= 60) {
-                    memberFee = 1600;
-                    memberFee += memberFeeTotal;
-
-                } else  {
-                    memberFee = 1150;
-                    memberFee += memberFeeTotal;
-                }
-
-            }
-
-        } else{
-            memberFee = 500;
-            memberFee += memberFeeTotal;
-        }
+    public Cashier() throws FileNotFoundException {
     }
 
-    public void showMemberFeeTotal(){
-        memberFeeCalculator();
-        System.out.println(memberFeeTotal);
+    public int memberFeeCalculator() {
+
+        memberFee = 0;
+
+        for (int i = 0; i < administrator.getMemberlist().size(); i++) {
+
+            //if (administrator.getMemberlist().get(i).isActiveMember()) {
+
+                if (administrator.getMemberlist().get(i).getAge() < 18) {
+                    memberFee = 1000;
+
+                } else if (administrator.getMemberlist().get(i).getAge() >= 18 &&
+                        administrator.getMemberlist().get(i).getAge() <= 60) {
+                    memberFee = 1600;
+
+                } else {
+                    memberFee = 1150;
+                }
+
+            } //else {
+               // memberFee = 500;
+           // }
+
+        //}
+        return memberFee;
+    }
+
+    public void showMemberFeeTotal() {
+        int result = memberFeeCalculator();
+        System.out.println(result);
 
     }
 

@@ -1,9 +1,11 @@
+import java.io.FileNotFoundException;
+
 public class SystemInterface {
 
     UserInterface userInterface = new UserInterface("Welcome to Delfinen!",
             "Press the appropriate number", new String[]{"1. Administrator","2. Coach", "3. Cashier", "4. Quit"});
 
-    public void startMenu() {
+    public void startMenu() throws FileNotFoundException {
         Administrator administrator = new Administrator();
         Cashier cashier = new Cashier();
         int choice;
