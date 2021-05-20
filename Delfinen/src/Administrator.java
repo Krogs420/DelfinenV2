@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -8,12 +7,14 @@ public class Administrator {
 
     private int memberFee;
     private int totalIncome = 0;
+    private int totalArrears = 0;
 
     Scanner input = new Scanner(System.in);
     private ArrayList<Member> memberlist = new ArrayList<Member>();
     ArrayList<TrialTimer> trainingTimes = new ArrayList<TrialTimer>();
+    ArrayList<Member> memberTrainingList = new ArrayList<Member>();
     ArrayList<Competitive> competitiveTimes = new ArrayList<>();
-    ArrayList<ArrayList<Member>> memberTrainingList = new ArrayList<ArrayList<Member>>();
+    ArrayList<Member> memberCompList = new ArrayList<>();
 
     public Administrator() throws FileNotFoundException {
     }
@@ -49,10 +50,15 @@ public class Administrator {
         input.nextLine();
         System.out.println("What is the members mail?");
         String mail = input.nextLine();
-        System.out.println("Is the member active?");
-        boolean active = input.nextBoolean();
-        System.out.println("Is member a competitor?");
-        boolean comp = input.nextBoolean();
+
+        System.out.println("Is the member active? Type yes or no? ");
+        String chooseActive = input.nextLine();
+        boolean active;
+        if(chooseActive.equalsIgnoreCase("yes")){
+           active = true;
+        } else {
+            active = false;
+        }
 
         if (active == true) {
             if (age < 18) {
@@ -70,7 +76,29 @@ public class Administrator {
 
         totalIncome += memberFee;
 
-        Member member = new Member(iD, name, age, mail, active, comp, memberFee);
+        System.out.println("Is member a competitor? Type yes or no? ");
+        String chooseComp = input.nextLine();
+        boolean comp;
+        if(chooseComp.equalsIgnoreCase("yes")){
+            comp = true;
+        } else {
+            comp = false;
+        }
+
+        System.out.println("Has the member paid? Type yes or no? ");
+        String chooseMemberFeePaid = input.nextLine();
+        boolean memberFeePaid;
+        if(chooseMemberFeePaid.equalsIgnoreCase("yes")){
+            memberFeePaid = true;
+        } else {
+            memberFeePaid = false;
+        }
+
+        if(memberFeePaid == false) {
+            totalArrears += memberFee;
+        }
+
+        Member member = new Member(iD, name, age, mail, active, comp, memberFee, memberFeePaid);
         memberlist.add(member);
         for (int i = 0; i < memberlist.size(); i++) {
             System.out.println(memberlist.get(i));
@@ -78,7 +106,7 @@ public class Administrator {
         }
         return memberFee;
     }
-
+    //-------------------------------------------------
     public void removeMember() {
 
         System.out.println("Enter the ID of the member you want to remove");
@@ -128,31 +156,134 @@ public class Administrator {
         } while (!valid);
     }
 
-    public void totalMembershipIncome() {
-        System.out.println("The yearly total income is: " + totalIncome);
-    }
-
     public void trainingTimer() {
 
-                System.out.println("Create a time trial from training.");
-                String trialTime = input.nextLine();
-                System.out.println("What discipline was it in?");
-                String trainingDiscipline = input.nextLine();
-                TrialTimer trialTimer = new TrialTimer(trialTime, trainingDiscipline);
-                trainingTimes.add(trialTimer);
+        System.out.println("Create a time trial from training.");
+        input.nextLine(); //What is going on here ?!?!?!?!?
+        String trialTime = input.nextLine();
+        System.out.println("What discipline was it in?");
+        String trainingDiscipline = input.nextLine();
+        System.out.println("What was the date?");
+        String date = input.nextLine();
+        TrialTimer trialTimer = new TrialTimer(trialTime, trainingDiscipline, date);
+        trainingTimes.add(trialTimer);
         System.out.println("Enter the ID of the member you want to add a time trial to.");
         int callID = input.nextInt();
         input.nextLine();
-        boolean memberExist = false;
-        int index;
+        boolean memberExist = true;
         for (int i = 0; i < memberlist.size(); i++) {
             Member member = memberlist.get(i);
             if (member.getiD() == callID) {
-                memberTrainingList.add(i,memberlist.get(i));
+                memberTrainingList.add(i, memberlist.get(i));
+                if (!memberExist) {
+                    System.out.println("There are no members with that ID");
+                }
+            }
+        }
+        System.out.println();
+    }
+
+    public void compTimer() {
+
+        System.out.println("Create a time from competition.");
+        String compTime = input.nextLine();
+        System.out.println("What discipline was it in?");
+        String discipline = input.nextLine();
+        System.out.println("What were their placement?");
+        int rank = input.nextInt();
+        input.nextLine();
+        System.out.println("What was the date?");
+        String date = input.nextLine();
+        Competitive competitive = new Competitive(rank, compTime, discipline, date);
+        competitiveTimes.add(competitive);
+        System.out.println("Enter the ID of the member you want to add a time trial to.");
+        int callID = input.nextInt();
+        input.nextLine();
+        boolean memberExist = true;
+        for (int i = 0; i < memberlist.size(); i++) {
+            Member member = memberlist.get(i);
+            if (member.getiD() == callID) {
+                memberCompList.add(i, memberlist.get(i));
                 if (!memberExist) {
                     System.out.println("There are no members with that ID");
                 }
             }
         }
     }
+
+    public void arrears() {
+        System.out.println("Total arrears is: " + totalArrears);
+    }
+
+    public void totalMembershipIncome() {
+        System.out.println("The yearly total income is: " + totalIncome);
+    }
+
+    public void cashierMenu() {
+
+        UserInterface userInterface = new UserInterface("Do you want to:",
+                "1. Show total member fee income \n" +
+                        "2. Show total member fee arrears", new String[]{});
+
+        int choice;
+        boolean valid;
+        do {
+            userInterface.printMenu();
+            choice = userInterface.readChoice();
+            valid = true;
+
+            switch (choice) {
+                case 1:
+                    totalMembershipIncome();
+                    break;
+                case 2:
+                    arrears();
+                    break;
+                default:
+                    valid = false;
+                    System.out.println("Your input is not valid, try again.");
+            }
+        } while (!valid);
+    }
+
+    public void coachMenu() {
+
+        UserInterface userInterface = new UserInterface("Do you want to:",
+                "1. Add competition times \n" +
+                        "2. Add training times\n" + "3. Show competition times\n" +
+                        "4. Show training times", new String[]{});
+
+        int choice;
+        boolean valid;
+        do {
+            userInterface.printMenu();
+            choice = userInterface.readChoice();
+            valid = true;
+
+            switch (choice) {
+                case 1:
+                    compTimer();
+                    break;
+                case 2:
+                    trainingTimer();
+                    break;
+                case 3:
+                    for (int i = 0; i < memberlist.size(); i++) {
+                        System.out.println(memberlist.get(i));
+                        System.out.println(competitiveTimes.get(i));
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < memberlist.size(); i++) {
+                        System.out.println(memberlist.get(i));
+                        System.out.println(trainingTimes.get(i));
+                    }
+                    break;
+                default:
+                    valid = false;
+                    System.out.println("Your input is not valid, try again.");
+            }
+        } while (!valid);
+    }
+
 }
