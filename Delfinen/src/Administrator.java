@@ -8,12 +8,13 @@ public class Administrator {
 
     private int memberFee;
     private int totalIncome = 0;
+    private int totalArrears = 0;
 
     Scanner input = new Scanner(System.in);
     private ArrayList<Member> memberlist = new ArrayList<Member>();
     ArrayList<TrialTimer> trainingTimes = new ArrayList<TrialTimer>();
     ArrayList<Competitive> competitiveTimes = new ArrayList<>();
-    ArrayList<ArrayList<Member>> memberTrainingList = new ArrayList<ArrayList<Member>>();
+    ArrayList<Member> memberTrainingList = new ArrayList<Member>();
 
     public Administrator() throws FileNotFoundException {
     }
@@ -54,6 +55,7 @@ public class Administrator {
         System.out.println("Is member a competitor?");
         boolean comp = input.nextBoolean();
 
+
         if (active == true) {
             if (age < 18) {
                 memberFee = 1000;
@@ -70,7 +72,14 @@ public class Administrator {
 
         totalIncome += memberFee;
 
-        Member member = new Member(iD, name, age, mail, active, comp, memberFee);
+        System.out.println("Has the member paid?");
+        boolean memberFeePaid = input.nextBoolean();
+
+        if(memberFeePaid == false) {
+            totalArrears += memberFee;
+        }
+
+        Member member = new Member(iD, name, age, mail, active, comp, memberFee, memberFeePaid);
         memberlist.add(member);
         for (int i = 0; i < memberlist.size(); i++) {
             System.out.println(memberlist.get(i));
@@ -78,7 +87,7 @@ public class Administrator {
         }
         return memberFee;
     }
-
+//-------------------------------------------------
     public void removeMember() {
 
         System.out.println("Enter the ID of the member you want to remove");
@@ -128,10 +137,6 @@ public class Administrator {
         } while (!valid);
     }
 
-    public void totalMembershipIncome() {
-        System.out.println("The yearly total income is: " + totalIncome);
-    }
-
     public void trainingTimer() {
 
                 System.out.println("Create a time trial from training.");
@@ -154,5 +159,40 @@ public class Administrator {
                 }
             }
         }
+    }
+
+    public void arrears() {
+        System.out.println("Total arrears is: " + totalArrears);
+    }
+
+    public void totalMembershipIncome() {
+        System.out.println("The yearly total income is: " + totalIncome);
+    }
+
+    public void arrearsMenu() {
+
+        UserInterface userInterface = new UserInterface("Do you want to:",
+            "1. Show total member fee income \n" +
+                "2. Show total member fee arrears", new String[]{});
+
+        int choice;
+        boolean valid;
+        do {
+            userInterface.printMenu();
+            choice = userInterface.readChoice();
+            valid = true;
+
+            switch (choice) {
+                case 1:
+                    totalMembershipIncome();
+                    break;
+                case 2:
+                    arrears();
+                    break;
+                default:
+                    valid = false;
+                    System.out.println("Your input is not valid, try again.");
+            }
+        } while (!valid);
     }
 }

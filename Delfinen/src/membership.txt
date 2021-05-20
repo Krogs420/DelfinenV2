@@ -249,3 +249,69 @@ Active Member: true
 MotionComp: true
 Yearly Fee: 1000
 ----------------------------------------
+----------------------------------------
+Member: 
+ID: 234
+Name: lsiudfhg
+Age: 34
+Mail: dfgh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: dfgh
+Age: 12
+Mail: dfg
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: fthg
+Age: 12
+Mail: ffgh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: fdg
+Age: 21
+Mail: gfdh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: fdg
+Age: 21
+Mail: gfdh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 2
+Name: dfgh
+Age: 43
+Mail: dfgh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1600
+Fee paid: false
+----------------------------------------

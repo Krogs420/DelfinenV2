@@ -22,7 +22,7 @@ public class SystemInterface {
                     //coachRun();
                     break;
                 case 3:
-                    administrator.totalMembershipIncome();
+                    administrator.arrearsMenu();
                     break;
                 case 4:
                     System.out.println("Bye");
