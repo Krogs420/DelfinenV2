@@ -1,6 +1,8 @@
 public class TrialTimer extends Timer {
-    public TrialTimer(String timer, String discipline) {
-        super(timer, discipline);
+    public TrialTimer(String timer, String discipline, String date) {
+        super(timer, discipline, date);
 
     }
+
+
 }

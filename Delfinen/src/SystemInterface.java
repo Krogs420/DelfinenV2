@@ -19,10 +19,10 @@ public class SystemInterface {
                     administrator.adminMenu();
                     break;
                 case 2:
-                    //coachRun();
+                    administrator.coachMenu();
                     break;
                 case 3:
-                    administrator.totalMembershipIncome();
+                    administrator.cashierMenu();
                     break;
                 case 4:
                     System.out.println("Bye");

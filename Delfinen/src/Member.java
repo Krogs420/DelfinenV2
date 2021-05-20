@@ -7,9 +7,11 @@ public class Member {
     private String mail;
     private boolean activeMember;
     private int memberFee;
+    private boolean memberFeePaid;
 
 
-    public Member(int iD, String name, int age, String mail, boolean activeMember, boolean motionComp, int memberFee) {
+
+    public Member(int iD, String name, int age, String mail, boolean activeMember, boolean motionComp, int memberFee, boolean memberFeePaid) {
         this.iD = iD;
         this.name = name;
         this.age = age;
@@ -17,6 +19,7 @@ public class Member {
         this.activeMember = activeMember;
         this.motionComp = motionComp;
         this.memberFee = memberFee;
+        this.memberFeePaid = memberFeePaid;
     }
 
     @Override
@@ -30,6 +33,7 @@ public class Member {
                 "\nActive Member: " + activeMember +
                 "\nMotionComp: " + motionComp +
                 "\nYearly Fee: " + memberFee +
+                "\nFee paid: " + memberFeePaid +
                 "\n----------------------------------------";
     }
 
