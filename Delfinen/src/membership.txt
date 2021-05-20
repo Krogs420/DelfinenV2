@@ -1,317 +1,187 @@
 ----------------------------------------
 Member: 
 ID: 1
-Name: sbg
-Age: 34
-Mail: fsgn
+Name: dfghfg
+Age: 23
+Mail: dfghfdg
 Active Member: true
 MotionComp: true
+Yearly Fee: 1600
+Fee paid: true
 ----------------------------------------
 ----------------------------------------
 Member: 
-ID: 1
-Name: sbg
-Age: 34
-Mail: fsgn
-Active Member: true
-MotionComp: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 23
-Name: fgjdsh
-Age: 26
-Mail: skjlfd
-Active Member: true
-MotionComp: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: thegtjd
+ID: 2
+Name: sdfgs
 Age: 12
-Mail: dgsf
+Mail: dsfgh
 Active Member: true
 MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
 ----------------------------------------
 ----------------------------------------
 Member: 
 ID: 1
-Name: jens
-Age: 12
+Name: dfghj
+Age: 43
+Mail: dfgh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: dfg
+Age: 1
+Mail: sgdfg
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: fgdh
+Age: 25
+Mail: dhdfgh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 2
+Name: dfsgh
+Age: 2
+Mail: dfgh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: dfsh
+Age: 123
+Mail: fsgd
+Active Member: true
+MotionComp: true
+Yearly Fee: 1150
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: fdgh
+Age: 1
+Mail: dfgh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: dfgh
+Age: 1
+Mail: dfgh
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 12
+Name: Jens
+Age: 23
 Mail: jens@gmail.com
 Active Member: true
-MotionComp: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: shjklffg
-Age: 31
-Mail: dsfgjdfgj
-Active Member: true
-MotionComp: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: shjklffg
-Age: 31
-Mail: dsfgjdfgj
-Active Member: true
-MotionComp: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 2
-Name: hans
-Age: 14
-Mail: dfilughosidluhg
-Active Member: true
-MotionComp: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: Jens
-Age: 12
-Mail: sdfkjbguitkhjok
-Active Member: true
-MotionComp: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: Karl
-Age: 13
-Mail: dlkfjbgsiudg
-Active Member: true
-MotionComp: true
-Yearly Fee: 1000
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: Karl
-Age: 13
-Mail: dlkfjbgsiudg
-Active Member: true
-MotionComp: true
-Yearly Fee: 1000
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 2
-Name: Frank
-Age: 34
-Mail: dlfiughoiufnbg
-Active Member: true
-MotionComp: true
+MotionComp: false
 Yearly Fee: 1600
+Fee paid: true
 ----------------------------------------
 ----------------------------------------
 Member: 
 ID: 1
-Name: Karl
-Age: 13
-Mail: dlkfjbgsiudg
-Active Member: true
-MotionComp: true
-Yearly Fee: 1000
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 2
-Name: Frank
-Age: 34
-Mail: dlfiughoiufnbg
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 3
-Name: Yvonne
-Age: 78
-Mail: ædfghpisodut
-Active Member: true
-MotionComp: true
-Yearly Fee: 1150
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1234
-Name: Jens
-Age: 501
-Mail: rlighoisnlkg
-Active Member: false
-MotionComp: true
-Yearly Fee: 500
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: Bo
-Age: 43
-Mail: slkjoiulhgksjd
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: fdghdf
-Age: 12
-Mail: sfdhjn
-Active Member: true
-MotionComp: true
-Yearly Fee: 0
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 2
-Name: sdlifj
-Age: 34
-Mail: dfhkgf
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: dfgyjukjfn
-Age: 34
-Mail: gfhdfgjh,
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 2
-Name: hdfgh
+Name: sdfg
 Age: 123
-Mail: dhfghjdf
+Mail: xdfsgdfg
 Active Member: true
-MotionComp: true
+MotionComp: false
 Yearly Fee: 1150
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: aaa
+Age: 23
+Mail: sdfgd
+Active Member: true
+MotionComp: false
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: aaa
+Age: 23
+Mail: sdfgd
+Active Member: true
+MotionComp: false
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 2
+Name: bbb
+Age: 34
+Mail: lsdkjfhglk
+Active Member: true
+MotionComp: false
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: aaa
+Age: 23
+Mail: sdfgd
+Active Member: true
+MotionComp: false
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 2
+Name: bbb
+Age: 34
+Mail: lsdkjfhglk
+Active Member: true
+MotionComp: false
+Yearly Fee: 1600
+Fee paid: true
 ----------------------------------------
 ----------------------------------------
 Member: 
 ID: 3
-Name: gdf
-Age: 12
-Mail: dgh
+Name: ccc
+Age: 52
+Mail: lsdfhglk
 Active Member: true
-MotionComp: true
-Yearly Fee: 1000
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: Jens
-Age: 32
-Mail: glksdubhj
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: Bo
-Age: 23
-Mail: sdfghsdfg
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: Bo
-Age: 23
-Mail: sdfghsdfg
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 2
-Name: Jan
-Age: 12
-Mail: slduhgois
-Active Member: true
-MotionComp: true
-Yearly Fee: 1000
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 234
-Name: lsiudfhg
-Age: 34
-Mail: dfgh
-Active Member: true
-MotionComp: true
+MotionComp: false
 Yearly Fee: 1600
 Fee paid: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: dfgh
-Age: 12
-Mail: dfg
-Active Member: true
-MotionComp: true
-Yearly Fee: 1000
-Fee paid: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: fthg
-Age: 12
-Mail: ffgh
-Active Member: true
-MotionComp: true
-Yearly Fee: 1000
-Fee paid: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: fdg
-Age: 21
-Mail: gfdh
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-Fee paid: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 1
-Name: fdg
-Age: 21
-Mail: gfdh
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-Fee paid: true
-----------------------------------------
-----------------------------------------
-Member: 
-ID: 2
-Name: dfgh
-Age: 43
-Mail: dfgh
-Active Member: true
-MotionComp: true
-Yearly Fee: 1600
-Fee paid: false
 ----------------------------------------

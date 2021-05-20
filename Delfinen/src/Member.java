@@ -10,6 +10,7 @@ public class Member {
     private boolean memberFeePaid;
 
 
+
     public Member(int iD, String name, int age, String mail, boolean activeMember, boolean motionComp, int memberFee, boolean memberFeePaid) {
         this.iD = iD;
         this.name = name;

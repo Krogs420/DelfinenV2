@@ -3,4 +3,6 @@ public class TrialTimer extends Timer {
         super(timer, discipline, date);
 
     }
+
+
 }

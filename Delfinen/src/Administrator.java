@@ -28,7 +28,7 @@ public class Administrator {
         return memberlist;
     }
 
-    File file = new File("src/membership.txt");
+    File file = new File("Delfinen/src/membership.txt");
 
     PrintStream writeToFile = new PrintStream(new FileOutputStream(file, true));
 
@@ -141,6 +141,7 @@ public class Administrator {
     public void trainingTimer() {
 
         System.out.println("Create a time trial from training.");
+        input.nextLine(); //What is going on here ?!?!?!?!?
         String trialTime = input.nextLine();
         System.out.println("What discipline was it in?");
         String trainingDiscipline = input.nextLine();
@@ -151,7 +152,7 @@ public class Administrator {
         System.out.println("Enter the ID of the member you want to add a time trial to.");
         int callID = input.nextInt();
         input.nextLine();
-        boolean memberExist = false;
+        boolean memberExist = true;
         for (int i = 0; i < memberlist.size(); i++) {
             Member member = memberlist.get(i);
             if (member.getiD() == callID) {
@@ -161,7 +162,9 @@ public class Administrator {
                 }
             }
         }
+        System.out.println();
     }
+
     public void compTimer() {
 
         System.out.println("Create a time from competition.");
@@ -178,7 +181,7 @@ public class Administrator {
         System.out.println("Enter the ID of the member you want to add a time trial to.");
         int callID = input.nextInt();
         input.nextLine();
-        boolean memberExist = false;
+        boolean memberExist = true;
         for (int i = 0; i < memberlist.size(); i++) {
             Member member = memberlist.get(i);
             if (member.getiD() == callID) {
@@ -198,7 +201,7 @@ public class Administrator {
         System.out.println("The yearly total income is: " + totalIncome);
     }
 
-    public void arrearsMenu() {
+    public void cashierMenu() {
 
         UserInterface userInterface = new UserInterface("Do you want to:",
             "1. Show total member fee income \n" +
@@ -217,6 +220,46 @@ public class Administrator {
                     break;
                 case 2:
                     arrears();
+                    break;
+                default:
+                    valid = false;
+                    System.out.println("Your input is not valid, try again.");
+            }
+        } while (!valid);
+    }
+
+    public void coachMenu() {
+
+        UserInterface userInterface = new UserInterface("Do you want to:",
+            "1. Add competition times \n" +
+                "2. Add training times\n" + "3. Show competition times\n" +
+                "4. Show training times", new String[]{});
+
+        int choice;
+        boolean valid;
+        do {
+            userInterface.printMenu();
+            choice = userInterface.readChoice();
+            valid = true;
+
+            switch (choice) {
+                case 1:
+                    compTimer();
+                    break;
+                case 2:
+                    trainingTimer();
+                    break;
+                case 3:
+                    for (int i = 0; i < memberlist.size(); i++) {
+                        System.out.println(memberlist.get(i));
+                        System.out.println(competitiveTimes.get(i));
+                    }
+                    break;
+                case 4:
+                    for (int i = 0; i < memberlist.size(); i++) {
+                        System.out.println(memberlist.get(i));
+                        System.out.println(trainingTimes.get(i));
+                    }
                     break;
                 default:
                     valid = false;
