@@ -3,6 +3,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+// Tænker at vi omdøber denne klasse til Metoder (Bedre ord), så vi kun har metoder herinde.
 public class Administrator {
 
     private int memberFee;
@@ -10,7 +11,9 @@ public class Administrator {
 
     Scanner input = new Scanner(System.in);
     private ArrayList<Member> memberlist = new ArrayList<Member>();
-    //Member member = new Member(0, "", 99, "", true, true, true);
+    ArrayList<TrialTimer> trainingTimes = new ArrayList<TrialTimer>();
+    ArrayList<Competitive> competitiveTimes = new ArrayList<>();
+    ArrayList<ArrayList<Member>> memberTrainingList = new ArrayList<ArrayList<Member>>();
 
     public Administrator() throws FileNotFoundException {
     }
@@ -96,6 +99,7 @@ public class Administrator {
         }
     }
 
+    // Tænker at vi kan lave en menu klasse med alle menuerne til admin osv.
     public void adminMenu() {
         UserInterface userInterface = new UserInterface("Do you want to:", "1. Add a member \n" +
                 "2. Remove a member" + "\n3. View Memberlist", new String[]{});
@@ -126,5 +130,29 @@ public class Administrator {
 
     public void totalMembershipIncome() {
         System.out.println("The yearly total income is: " + totalIncome);
+    }
+
+    public void trainingTimer() {
+
+                System.out.println("Create a time trial from training.");
+                String trialTime = input.nextLine();
+                System.out.println("What discipline was it in?");
+                String trainingDiscipline = input.nextLine();
+                TrialTimer trialTimer = new TrialTimer(trialTime, trainingDiscipline);
+                trainingTimes.add(trialTimer);
+        System.out.println("Enter the ID of the member you want to add a time trial to.");
+        int callID = input.nextInt();
+        input.nextLine();
+        boolean memberExist = false;
+        int index;
+        for (int i = 0; i < memberlist.size(); i++) {
+            Member member = memberlist.get(i);
+            if (member.getiD() == callID) {
+                memberTrainingList.add(i,memberlist.get(i));
+                if (!memberExist) {
+                    System.out.println("There are no members with that ID");
+                }
+            }
+        }
     }
 }
