@@ -13,8 +13,9 @@ public class Administrator {
     Scanner input = new Scanner(System.in);
     private ArrayList<Member> memberlist = new ArrayList<Member>();
     ArrayList<TrialTimer> trainingTimes = new ArrayList<TrialTimer>();
-    ArrayList<Competitive> competitiveTimes = new ArrayList<>();
     ArrayList<Member> memberTrainingList = new ArrayList<Member>();
+    ArrayList<Competitive> competitiveTimes = new ArrayList<>();
+    ArrayList<Member> memberCompList = new ArrayList<>();
 
     public Administrator() throws FileNotFoundException {
     }
@@ -139,21 +140,49 @@ public class Administrator {
 
     public void trainingTimer() {
 
-                System.out.println("Create a time trial from training.");
-                String trialTime = input.nextLine();
-                System.out.println("What discipline was it in?");
-                String trainingDiscipline = input.nextLine();
-                TrialTimer trialTimer = new TrialTimer(trialTime, trainingDiscipline);
-                trainingTimes.add(trialTimer);
+        System.out.println("Create a time trial from training.");
+        String trialTime = input.nextLine();
+        System.out.println("What discipline was it in?");
+        String trainingDiscipline = input.nextLine();
+        System.out.println("What was the date?");
+        String date = input.nextLine();
+        TrialTimer trialTimer = new TrialTimer(trialTime, trainingDiscipline, date);
+        trainingTimes.add(trialTimer);
         System.out.println("Enter the ID of the member you want to add a time trial to.");
         int callID = input.nextInt();
         input.nextLine();
         boolean memberExist = false;
-        int index;
         for (int i = 0; i < memberlist.size(); i++) {
             Member member = memberlist.get(i);
             if (member.getiD() == callID) {
-                memberTrainingList.add(i,memberlist.get(i));
+                memberTrainingList.add(i, memberlist.get(i));
+                if (!memberExist) {
+                    System.out.println("There are no members with that ID");
+                }
+            }
+        }
+    }
+    public void compTimer() {
+
+        System.out.println("Create a time from competition.");
+        String compTime = input.nextLine();
+        System.out.println("What discipline was it in?");
+        String discipline = input.nextLine();
+        System.out.println("What were their placement?");
+        int rank = input.nextInt();
+        input.nextLine();
+        System.out.println("What was the date?");
+        String date = input.nextLine();
+        Competitive competitive = new Competitive(rank, compTime, discipline, date);
+        competitiveTimes.add(competitive);
+        System.out.println("Enter the ID of the member you want to add a time trial to.");
+        int callID = input.nextInt();
+        input.nextLine();
+        boolean memberExist = false;
+        for (int i = 0; i < memberlist.size(); i++) {
+            Member member = memberlist.get(i);
+            if (member.getiD() == callID) {
+                memberCompList.add(i, memberlist.get(i));
                 if (!memberExist) {
                     System.out.println("There are no members with that ID");
                 }

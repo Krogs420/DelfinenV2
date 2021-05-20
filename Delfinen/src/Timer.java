@@ -1,8 +1,17 @@
 public class Timer {
     private String timer;
     private String discipline;
+    private String date;
 
-    public Timer(String timer, String discipline) {
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public Timer(String timer, String discipline, String date) {
     }
 
     public String getTimer() {
