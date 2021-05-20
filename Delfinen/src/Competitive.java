@@ -1,9 +1,8 @@
 public class Competitive extends Timer {
     private int rank;
 
-    public Competitive(int rank, String timer, String discipline, String date) {
-        super(timer, discipline, date);
-        this.rank = rank;
+    public Competitive(int rank, String timer, String discipline) {
+        super(timer, discipline);
     }
 
     public int getRank() {
@@ -14,10 +13,6 @@ public class Competitive extends Timer {
         this.rank = rank;
     }
 
-    @Override
-    public String toString() {
-        return "Competitive{" +
-            "rank=" + rank +
-            '}';
-    }
+
+
 }
