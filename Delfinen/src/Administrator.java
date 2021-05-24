@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 // Tænker at vi omdøber denne klasse til Metoder (Bedre ord), så vi kun har metoder herinde.
@@ -10,12 +11,15 @@ public class Administrator {
     private int totalArrears = 0;
 
     Scanner input = new Scanner(System.in);
-    private ArrayList<Member> memberlist = new ArrayList<Member>();
-    ArrayList<TrialTimer> trainingTimes = new ArrayList<TrialTimer>();
-    ArrayList<Member> memberTrainingList = new ArrayList<Member>();
-    ArrayList<Competitive> competitiveTimes = new ArrayList<>();
-    ArrayList<Member> memberCompList = new ArrayList<>();
-
+    ArrayList<Member> memberlist = new ArrayList<Member>();
+    ArrayList<TrialTimer> crawlTrainingTimes = new ArrayList<TrialTimer>();
+    ArrayList<TrialTimer> backcrawlTrainingTimes = new ArrayList<TrialTimer>();
+    ArrayList<TrialTimer> butterflyTrainingTimes = new ArrayList<TrialTimer>();
+    ArrayList<TrialTimer> breaststrokeTrainingTimes = new ArrayList<TrialTimer>();
+    ArrayList<Competitive> crawlCompetitiveTimes = new ArrayList<>();
+    ArrayList<Competitive> backcrawlCompetitiveTimes = new ArrayList<>();
+    ArrayList<Competitive> butterflyCompetitiveTimes = new ArrayList<>();
+    ArrayList<Competitive> breaststrokeCompetitiveTimes = new ArrayList<>();
     public Administrator() throws FileNotFoundException {
     }
 
@@ -27,7 +31,7 @@ public class Administrator {
         return memberlist;
     }
 
-    File file = new File("src/membership.txt");
+    File file = new File("Delfinen/src/membership.txt");
 
     PrintStream writeToFile = new PrintStream(new FileOutputStream(file, true));
 
@@ -127,89 +131,85 @@ public class Administrator {
         }
     }
 
-    // Tænker at vi kan lave en menu klasse med alle menuerne til admin osv.
-    public void adminMenu() {
-        UserInterface userInterface = new UserInterface("Do you want to:", "1. Add a member \n" +
-                "2. Remove a member" + "\n3. View Memberlist", new String[]{});
-
-        int choice;
-        boolean valid;
-        do {
-            userInterface.printMenu();
-            choice = userInterface.readChoice();
-            valid = true;
-
-            switch (choice) {
-                case 1:
-                    makeNewMember();
-                    break;
-                case 2:
-                    removeMember();
-                    break;
-                case 3:
-                    viewMemberList();
-                    break;
-                default:
-                    valid = false;
-                    System.out.println("Your input is not valid, try again.");
-            }
-        } while (!valid);
-    }
-
-    public void trainingTimer() {
-
-        System.out.println("Create a time trial from training.");
-        input.nextLine(); //What is going on here ?!?!?!?!?
-        String trialTime = input.nextLine();
-        System.out.println("What discipline was it in?");
-        String trainingDiscipline = input.nextLine();
-        System.out.println("What was the date?");
-        String date = input.nextLine();
-        TrialTimer trialTimer = new TrialTimer(trialTime, trainingDiscipline, date);
-        trainingTimes.add(trialTimer);
+    public TrialTimer trainingTimer() {
         System.out.println("Enter the ID of the member you want to add a time trial to.");
         int callID = input.nextInt();
         input.nextLine();
         boolean memberExist = true;
+        String name = "";
         for (int i = 0; i < memberlist.size(); i++) {
             Member member = memberlist.get(i);
             if (member.getiD() == callID) {
-                memberTrainingList.add(i, memberlist.get(i));
-                if (!memberExist) {
-                    System.out.println("There are no members with that ID");
-                }
+                name = memberlist.get(i).getName();
+            }
+            if (!memberExist) {
+                System.out.println("There are no members with that ID");
             }
         }
-        System.out.println();
+        System.out.println("What was the date?");
+        String date = input.nextLine();
+        System.out.println("Create a time trial from training.");
+        double trialTime = input.nextDouble();
+
+        TrialTimer trialTimer = new TrialTimer(callID, name,date,trialTime);
+        return trialTimer;
+
     }
+    public void crawlTraining(){
+        crawlTrainingTimes.add(trainingTimer());
+    }
+    public void backcrawlTraining () {
+        backcrawlTrainingTimes.add(trainingTimer());
+    }
+    public void butterflyTraining () {
+        butterflyTrainingTimes.add(trainingTimer());
+    }
+    public void breaststrokeTraining () {
+        breaststrokeTrainingTimes.add(trainingTimer());
+    }
+public void crawlComp (){
 
-    public void compTimer() {
+        crawlCompetitiveTimes.add(compTimer());
+}
+public void backCrawlComp () {
+        backcrawlCompetitiveTimes.add(compTimer());
+}
+public void butterflyComp () {
+        butterflyCompetitiveTimes.add(compTimer());
+}
+public void breaststrokeComp () {
+        breaststrokeCompetitiveTimes.add(compTimer());
+}
 
+
+    public Competitive compTimer() {
+        System.out.println("Enter the ID of the member you want to add a time trial to.");
+        int callID = input.nextInt();
+        input.nextLine();
+        boolean memberExist = true;
+        String name = "";
+        for (int i = 0; i < memberlist.size(); i++) {
+            Member member = memberlist.get(i);
+            if (member.getiD() == callID) {
+                name = memberlist.get(i).getName();
+            }
+            if (!memberExist) {
+                System.out.println("There are no members with that ID");
+            }
+        }
         System.out.println("Create a time from competition.");
-        String compTime = input.nextLine();
-        System.out.println("What discipline was it in?");
-        String discipline = input.nextLine();
+        double compTime = input.nextDouble();
+        System.out.println("Which competition was it?");
+        String placeOfComp = input.nextLine();
         System.out.println("What were their placement?");
         int rank = input.nextInt();
         input.nextLine();
         System.out.println("What was the date?");
         String date = input.nextLine();
-        Competitive competitive = new Competitive(rank, compTime, discipline, date);
-        competitiveTimes.add(competitive);
-        System.out.println("Enter the ID of the member you want to add a time trial to.");
-        int callID = input.nextInt();
-        input.nextLine();
-        boolean memberExist = true;
-        for (int i = 0; i < memberlist.size(); i++) {
-            Member member = memberlist.get(i);
-            if (member.getiD() == callID) {
-                memberCompList.add(i, memberlist.get(i));
-                if (!memberExist) {
-                    System.out.println("There are no members with that ID");
-                }
-            }
-        }
+        Competitive competitive = new Competitive(callID,name,date,compTime,rank, placeOfComp);
+        return competitive;
     }
+
 
     public void arrears() {
         System.out.println("Total arrears is: " + totalArrears);
@@ -219,71 +219,7 @@ public class Administrator {
         System.out.println("The yearly total income is: " + totalIncome);
     }
 
-    public void cashierMenu() {
 
-        UserInterface userInterface = new UserInterface("Do you want to:",
-                "1. Show total member fee income \n" +
-                        "2. Show total member fee arrears", new String[]{});
 
-        int choice;
-        boolean valid;
-        do {
-            userInterface.printMenu();
-            choice = userInterface.readChoice();
-            valid = true;
-
-            switch (choice) {
-                case 1:
-                    totalMembershipIncome();
-                    break;
-                case 2:
-                    arrears();
-                    break;
-                default:
-                    valid = false;
-                    System.out.println("Your input is not valid, try again.");
-            }
-        } while (!valid);
-    }
-
-    public void coachMenu() {
-
-        UserInterface userInterface = new UserInterface("Do you want to:",
-                "1. Add competition times \n" +
-                        "2. Add training times\n" + "3. Show competition times\n" +
-                        "4. Show training times", new String[]{});
-
-        int choice;
-        boolean valid;
-        do {
-            userInterface.printMenu();
-            choice = userInterface.readChoice();
-            valid = true;
-
-            switch (choice) {
-                case 1:
-                    compTimer();
-                    break;
-                case 2:
-                    trainingTimer();
-                    break;
-                case 3:
-                    for (int i = 0; i < memberlist.size(); i++) {
-                        System.out.println(memberlist.get(i));
-                        System.out.println(competitiveTimes.get(i));
-                    }
-                    break;
-                case 4:
-                    for (int i = 0; i < memberlist.size(); i++) {
-                        System.out.println(memberlist.get(i));
-                        System.out.println(trainingTimes.get(i));
-                    }
-                    break;
-                default:
-                    valid = false;
-                    System.out.println("Your input is not valid, try again.");
-            }
-        } while (!valid);
-    }
 
 }

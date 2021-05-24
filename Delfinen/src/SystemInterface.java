@@ -6,8 +6,7 @@ public class SystemInterface {
             "Press the appropriate number", new String[]{"1. Administrator","2. Coach", "3. Cashier", "4. Quit"});
 
     public void startMenu() throws FileNotFoundException {
-        Administrator administrator = new Administrator();
-        Cashier cashier = new Cashier();
+     SystemMenu systemMenu = new SystemMenu();
         int choice;
         boolean valid;
         do {
@@ -16,13 +15,13 @@ public class SystemInterface {
             valid = true;
             switch (choice) {
                 case 1:
-                    administrator.adminMenu();
+                    systemMenu.adminMenu();
                     break;
                 case 2:
-                    administrator.coachMenu();
+                    systemMenu.coachMenu();
                     break;
                 case 3:
-                    administrator.cashierMenu();
+                    systemMenu.cashierMenu();
                     break;
                 case 4:
                     System.out.println("Bye");

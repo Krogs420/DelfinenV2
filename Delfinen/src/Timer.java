@@ -1,23 +1,56 @@
 public class Timer {
-    private String timer;
-    private String discipline;
+    private int iD;
+    private String name;
+    private String date;
+    private double timer;
 
-    public Timer(String timer, String discipline) {
+    @Override
+    public String toString() {
+        return "Timer{" +
+                "iD=" + iD +
+                ", name='" + name + '\'' +
+                ", date='" + date + '\'' +
+                ", timer='" + timer + '\'' +
+                '}';
     }
 
-    public String getTimer() {
-        return timer;
-    }
-
-    public void setTimer(String timer) {
+    public Timer(int iD, String name, String date, double timer) {
+        this.iD = iD;
+        this.name = name;
+        this.date = date;
         this.timer = timer;
     }
 
-    public String getDiscipline() {
-        return discipline;
+    public int getiD() {
+        return iD;
     }
 
-    public void setDiscipline(String discipline) {
-        this.discipline = discipline;
+    public void setiD(int iD) {
+        this.iD = iD;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getTimer() {
+        return timer;
+    }
+
+    public void setTimer(double timer) {
+        this.timer = timer;
+    }
+
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

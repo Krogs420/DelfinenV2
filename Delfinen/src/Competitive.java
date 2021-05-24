@@ -1,8 +1,20 @@
 public class Competitive extends Timer {
     private int rank;
+    private String placeOfComp;
 
-    public Competitive(int rank, String timer, String discipline) {
-        super(timer, discipline);
+    @Override
+    public String toString() {
+        return super.toString()+
+                "Competitive{" +
+                "rank=" + rank +
+                ", placeOfComp='" + placeOfComp + '\'' +
+                '}';
+    }
+
+    public Competitive(int iD, String name, String date, double timer, int rank, String placeOfComp) {
+        super(iD, name, date, timer);
+        this.rank = rank;
+        this.placeOfComp = placeOfComp;
     }
 
     public int getRank() {
@@ -13,6 +25,13 @@ public class Competitive extends Timer {
         this.rank = rank;
     }
 
+    public String getPlaceOfComp() {
+        return placeOfComp;
+    }
+
+    public void setPlaceOfComp(String placeOfComp) {
+        this.placeOfComp = placeOfComp;
+    }
 
 
 }

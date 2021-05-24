@@ -249,3 +249,190 @@ Active Member: true
 MotionComp: true
 Yearly Fee: 1000
 ----------------------------------------
+----------------------------------------
+Member: 
+ID: 3
+Name: asdasd
+Age: 1
+Mail: asdasd
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 3
+Name: asdasd
+Age: 1
+Mail: asdasd
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 2
+Name: sadasdsad
+Age: 13
+Mail: asdassadsd
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 3
+Name: sadasda
+Age: 18
+Mail: sadas
+Active Member: true
+MotionComp: true
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 3
+Name: sadasda
+Age: 18
+Mail: sadas
+Active Member: true
+MotionComp: true
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 2
+Name: asdasdasd
+Age: 123
+Mail: acxcsadas
+Active Member: true
+MotionComp: true
+Yearly Fee: 1150
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 2
+Name: sadasda
+Age: 123
+Mail: asdas
+Active Member: true
+MotionComp: true
+Yearly Fee: 1150
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 2
+Name: sadasda
+Age: 123
+Mail: asdas
+Active Member: true
+MotionComp: true
+Yearly Fee: 1150
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: sadasdsa
+Age: 13
+Mail: sadaswa
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 3
+Name: asdasd
+Age: 1
+Mail: sadasdas
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 3
+Name: asdasd
+Age: 1
+Mail: sadasdas
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: 123
+Age: 123
+Mail: wae
+Active Member: true
+MotionComp: true
+Yearly Fee: 1150
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: dadsas
+Age: 1
+Mail: adsda
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 3
+Name: asdasd
+Age: 13
+Mail: asdasda
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 3
+Name: asdasd
+Age: 13
+Mail: asdasda
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: saddasdas
+Age: 13
+Mail: adsasdas
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
+----------------------------------------
+Member: 
+ID: 1
+Name: 1
+Age: 1
+Mail: 1
+Active Member: true
+MotionComp: true
+Yearly Fee: 1000
+Fee paid: true
+----------------------------------------
