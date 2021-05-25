@@ -6,9 +6,16 @@ import java.util.Scanner;
 // Tænker at vi omdøber denne klasse til Metoder (Bedre ord), så vi kun har metoder herinde.
 public class Administrator {
 
+    private Member member;
+
+    public Administrator (Member member) throws FileNotFoundException {
+        this.member = member;
+    }
+
     private int memberFee;
     private int totalIncome = 0;
     private int totalArrears = 0;
+
 
     Scanner input = new Scanner(System.in);
     ArrayList<Member> memberlist = new ArrayList<Member>();
@@ -31,7 +38,7 @@ public class Administrator {
         return memberlist;
     }
 
-    File file = new File("Delfinen/src/membership.txt");
+    File file = new File("src/membership.txt");
 
     PrintStream writeToFile = new PrintStream(new FileOutputStream(file, true));
 
@@ -210,7 +217,6 @@ public void breaststrokeComp () {
         return competitive;
     }
 
-
     public void arrears() {
         System.out.println("Total arrears is: " + totalArrears);
     }
@@ -218,8 +224,6 @@ public void breaststrokeComp () {
     public void totalMembershipIncome() {
         System.out.println("The yearly total income is: " + totalIncome);
     }
-
-
-
-
 }
+
+//Creators - Jeppe, Christopher & Kristian
