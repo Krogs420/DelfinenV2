@@ -7,5 +7,4 @@ public class Cashier {
     }
 }
 
-
 // Creators - Jeppe

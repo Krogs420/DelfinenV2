@@ -436,3 +436,14 @@ MotionComp: true
 Yearly Fee: 1000
 Fee paid: true
 ----------------------------------------
+----------------------------------------
+Member: 
+ID: 2345678
+Name: kuyfyytf
+Age: 56
+Mail: lidusfhgisl
+Active Member: true
+MotionComp: true
+Yearly Fee: 1600
+Fee paid: true
+----------------------------------------

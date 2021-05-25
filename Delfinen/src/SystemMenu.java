@@ -2,6 +2,7 @@ import java.io.FileNotFoundException;
 
 public class SystemMenu {
     Administrator administrator = new Administrator();
+    Coach coach = new Coach(administrator);
 
     public SystemMenu() throws FileNotFoundException {
     }
@@ -52,32 +53,32 @@ public class SystemMenu {
                 case 1:
                     switch (choice) {
                         case 1:
-                            administrator.breaststrokeComp();
+                            coach.breaststrokeComp();
                             break;
                         case 2:
-                            administrator.butterflyComp();
+                            coach.butterflyComp();
                             break;
                         case 3:
-                            administrator.backCrawlComp();
+                            coach.backCrawlComp();
                             break;
                         case 4:
-                            administrator.crawlComp();
+                            coach.crawlComp();
                     }
 
                     break;
                 case 2:
                     switch (choice) {
                         case 1:
-                            administrator.breaststrokeTraining();
+                            coach.breaststrokeTraining();
                             break;
                         case 2:
-                            administrator.butterflyTraining();
+                            coach.butterflyTraining();
                             break;
                         case 3:
-                            administrator.backcrawlTraining();
+                            coach.backcrawlTraining();
                             break;
                         case 4:
-                            administrator.crawlTraining();
+                            coach.crawlTraining();
                     }
                     break;
                 case 3:
