@@ -11,8 +11,8 @@ public class Competitive extends Timer {
                 '}';
     }
 
-    public Competitive(int iD, String name, String date, double timer, int rank, String placeOfComp) {
-        super(iD, name, date, timer);
+    public Competitive(int iD, String name, String date, double timer, boolean juniorSenior, int rank, String placeOfComp) {
+        super(iD, name, date, timer, juniorSenior);
         this.rank = rank;
         this.placeOfComp = placeOfComp;
     }

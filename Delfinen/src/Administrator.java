@@ -19,14 +19,7 @@ public class Administrator {
 
     Scanner input = new Scanner(System.in);
     ArrayList<Member> memberlist = new ArrayList<Member>();
-    ArrayList<TrialTimer> crawlTrainingTimes = new ArrayList<TrialTimer>();
-    ArrayList<TrialTimer> backcrawlTrainingTimes = new ArrayList<TrialTimer>();
-    ArrayList<TrialTimer> butterflyTrainingTimes = new ArrayList<TrialTimer>();
-    ArrayList<TrialTimer> breaststrokeTrainingTimes = new ArrayList<TrialTimer>();
-    ArrayList<Competitive> crawlCompetitiveTimes = new ArrayList<>();
-    ArrayList<Competitive> backcrawlCompetitiveTimes = new ArrayList<>();
-    ArrayList<Competitive> butterflyCompetitiveTimes = new ArrayList<>();
-    ArrayList<Competitive> breaststrokeCompetitiveTimes = new ArrayList<>();
+
     public Administrator() throws FileNotFoundException {
     }
 
@@ -38,7 +31,7 @@ public class Administrator {
         return memberlist;
     }
 
-    File file = new File("src/membership.txt");
+    File file = new File("Delfinen/src/membership.txt");
 
     PrintStream writeToFile = new PrintStream(new FileOutputStream(file, true));
 
