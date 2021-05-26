@@ -5,6 +5,7 @@ public class Cashier {
     public Cashier (Administrator administrator) {
         this.administrator = administrator;
     }
+
 }
 
 // Creators - Jeppe
