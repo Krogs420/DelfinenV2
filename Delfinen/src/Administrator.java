@@ -138,6 +138,13 @@ public class Administrator {
     public void totalMembershipIncome() {
         System.out.println("The yearly total income is: " + totalIncome);
     }
+
+
+
+    public int totalMemberShipIncomeForTest(int memberFee){
+        totalIncome += memberFee;
+        return totalIncome;
+    }
 }
 
 //Creators - Jeppe, Christopher & Kristian
