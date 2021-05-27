@@ -15,20 +15,11 @@ public class Timer {
                 '}';
     }
 
-    public Timer(int iD, String name, String date, double timer, boolean juniorSenior) {
+    public Timer(int iD, String name, String date, double timer) {
         this.iD = iD;
         this.name = name;
         this.date = date;
         this.timer = timer;
-        this.juniorSenior = juniorSenior;
-    }
-
-    public boolean isJuniorSenior() {
-        return juniorSenior;
-    }
-
-    public void setJuniorSenior(boolean juniorSenior) {
-        this.juniorSenior = juniorSenior;
     }
 
     public int getiD() {
